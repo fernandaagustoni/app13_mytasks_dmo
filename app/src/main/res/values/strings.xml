@@ -4,4 +4,6 @@
     <string name="description_name">Description: </string>
     <string name="creationdate_name">Date: </string>
     <string name="save_name">Save</string>
+    <string name="title_name">Task</string>
+    <string name="todo_name">To do</string>
 </resources>

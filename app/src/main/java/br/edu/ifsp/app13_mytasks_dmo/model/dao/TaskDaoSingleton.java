@@ -54,7 +54,7 @@ public class TaskDaoSingleton implements ITaskDao{
     @Override
     public Task findByTitle(String title) {
         return dataset.stream()
-                .filter(article -> article.getTitle().equals(title))
+                .filter(task -> task.getTitle().equals(title))
                 .findFirst()
                 .orElse(null);
     }

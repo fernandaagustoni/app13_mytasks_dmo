@@ -30,17 +30,15 @@ public class Task {
         this.priority = priority;
         init();
     }
-
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String url) {
         this.title = title;
     }
 
     public String getDescription() {
-        return title;
+        return description;
     }
 
     public void setDescription(String description) {
@@ -53,23 +51,18 @@ public class Task {
     public boolean isPriority() {
         return priority;
     }
-
     public void setPriority(boolean priority) {
         this.priority = priority;
     }
-
     public void addTag(Tag tag){
         this.tags.add(tag);
     }
-
     public boolean removeTag(Tag tag){
         return this.tags.remove(tag);
     }
-
     public List<Tag> getTags(){
         return tags;
     }
-
     @NonNull
     @Override
     public String toString() {

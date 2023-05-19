@@ -85,8 +85,8 @@ public class TaskDetailsActivity extends AppCompatActivity
     }
 
     private void findViews(){
-        descriptionEditText = findViewById(R.id.edittext_description_details);
         titleEditText = findViewById(R.id.edittext_title_details);
+        descriptionEditText = findViewById(R.id.edittext_description_details);
         creationdateEditText = findViewById(R.id.edittext_creationdate_details);
         saveButton = findViewById(R.id.button_save_task);
     }

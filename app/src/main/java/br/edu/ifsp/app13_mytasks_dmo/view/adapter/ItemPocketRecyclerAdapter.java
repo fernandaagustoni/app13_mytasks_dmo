@@ -44,11 +44,11 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
         holder.descriptionTextView.setText(task.getDescription());
         holder.creationdateTextView.setText(task.getCreationDate());
         if(task.isPriority()){
-            holder.favoriteImageView.setColorFilter(context.getColor(R.color.purple));
+            holder.priorityImageView.setColorFilter(context.getColor(R.color.purple));
         }else{
-            holder.favoriteImageView.setColorFilter(context.getColor(R.color.white));
+            holder.priorityImageView.setColorFilter(context.getColor(R.color.white));
         }
-        holder.favoriteImageView.setOnClickListener(new View.OnClickListener() {
+        holder.priorityImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 heartClick(task);
@@ -75,14 +75,14 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
         public TextView titleTextView;
         public TextView descriptionTextView;
         public TextView creationdateTextView;
-        public ImageView favoriteImageView;
+        public ImageView priorityImageView;
 
         public ViewHolder(View itemView){
             super(itemView);
             titleTextView = itemView.findViewById(R.id.text_title_listitem);
             descriptionTextView = itemView.findViewById(R.id.text_description_listitem);
             creationdateTextView = itemView.findViewById(R.id.text_creationdate_listitem);
-            favoriteImageView = itemView.findViewById(R.id.image_favorite_listitem);
+            priorityImageView = itemView.findViewById(R.id.image_priority_listitem);
             itemView.setOnClickListener(this);
         }
 

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".view.TaskDetailsActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/guideline"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <EditText
+        android:id="@+id/edittext_title_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:hint="@string/task_name"
+        android:textColorHint="@color/white"
+        android:inputType="text"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edittext_description_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/description_name"
+        android:textColorHint="@color/white"
+        android:inputType="text"
+        android:padding="8dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/edittext_title_details"
+        app:layout_constraintStart_toStartOf="@id/edittext_title_details"
+        app:layout_constraintTop_toBottomOf="@id/edittext_title_details" />
+
+    <EditText
+        android:id="@+id/edittext_creationdate_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/creationdate_name"
+        android:textColorHint="@color/white"
+        android:inputType="date"
+        android:padding="8dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/edittext_description_details"
+        app:layout_constraintStart_toStartOf="@id/edittext_description_details"
+        app:layout_constraintTop_toBottomOf="@id/edittext_description_details" />
+
+    <Button
+        android:id="@+id/button_save_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="@string/save_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/edittext_title_details"
+        app:layout_constraintStart_toStartOf="@id/edittext_title_details" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

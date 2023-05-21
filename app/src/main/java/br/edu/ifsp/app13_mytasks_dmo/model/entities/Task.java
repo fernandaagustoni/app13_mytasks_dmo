@@ -12,18 +12,15 @@ public class Task implements Comparable<Task>{
     private boolean priority;
     //Relationships
     private List<Tag> tags;
-
     private void init(){
         tags = new ArrayList<>();
     }
-
     public Task(String title, String description, String creationDate) {
         this.title = title;
         this.description = description;
         this.creationDate = creationDate;
         init();
     }
-
     public Task(String title, String description, String creationDate, boolean priority) {
         this.title = title;
         this.description = description;
@@ -37,18 +34,14 @@ public class Task implements Comparable<Task>{
     public void setTitle(String url) {
         this.title = title;
     }
-
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
-
     public String getCreationDate(){ return creationDate; }
     public void setCreationDate(String creationDate){ this.creationDate = creationDate; }
-
     public boolean isPriority() {
         return priority;
     }

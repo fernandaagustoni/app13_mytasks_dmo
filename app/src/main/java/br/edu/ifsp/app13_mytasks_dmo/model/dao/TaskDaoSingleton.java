@@ -3,24 +3,20 @@ package br.edu.ifsp.app13_mytasks_dmo.model.dao;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 import br.edu.ifsp.app13_mytasks_dmo.model.entities.Tag;
 import br.edu.ifsp.app13_mytasks_dmo.model.entities.Task;
 
 public class TaskDaoSingleton implements ITaskDao{
     private static TaskDaoSingleton instance = null;
     private List<Task> dataset;
-
     private TaskDaoSingleton() {
         dataset = new ArrayList<>();
     }
-
     public static TaskDaoSingleton getInstance(){
         if(instance == null)
             instance = new TaskDaoSingleton();
         return instance;
     }
-
     @Override
     public void create(Task task) {
         if(task != null){
@@ -28,7 +24,6 @@ public class TaskDaoSingleton implements ITaskDao{
             Collections.sort(dataset);
         }
     }
-
     @Override
     public boolean update(String oldTitle, Task task) {
         Task inDataset;
@@ -48,12 +43,10 @@ public class TaskDaoSingleton implements ITaskDao{
         }
         return false;
     }
-
     @Override
     public boolean delete(Task task) {
         return dataset.remove(task);
     }
-
     @Override
     public Task findByTitle(String title) {
         return dataset.stream()
@@ -61,7 +54,6 @@ public class TaskDaoSingleton implements ITaskDao{
                 .findFirst()
                 .orElse(null);
     }
-
     @Override
     public List<Task> findByTag(Tag tag) {
         List<Task> selection = new ArrayList<>();
@@ -74,7 +66,6 @@ public class TaskDaoSingleton implements ITaskDao{
         }
         return selection;
     }
-
     @Override
     public List<Task> findAll() {
         return dataset;

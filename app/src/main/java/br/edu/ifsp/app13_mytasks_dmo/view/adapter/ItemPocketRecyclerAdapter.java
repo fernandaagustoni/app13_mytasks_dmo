@@ -25,7 +25,6 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
         this.presenter = presenter;
         this.data = data;
     }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,7 +34,6 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
-
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Task task = data.get(position);
@@ -66,7 +64,6 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
             }
         });
     }
-
     @Override
     public int getItemCount() {
         return data.size();
@@ -75,22 +72,18 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
     public void setClickListener(RecyclerViewItemClickListener listener){
         clickListener = listener;
     }
-
     private void starClick(Task task){
         presenter.priorityTask(task);
         notifyDataSetChanged();
     }
-
     private void deleteClick(Task task){
         presenter.deleteTask(task);
         notifyDataSetChanged();
     }
-
     private void editClick(Task task){
         presenter.editTask(task);
         notifyDataSetChanged();
     }
-
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView titleTextView;
         public TextView descriptionTextView;
@@ -107,7 +100,6 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
             priorityImageView = itemView.findViewById(R.id.image_priority_listitem);
             deleteImageView = itemView.findViewById(R.id.image_delete_listitem);
             editImageView = itemView.findViewById(R.id.image_edit_listitem);
-            itemView.setOnClickListener(this);
         }
         @Override
         public void onClick(View v) {
@@ -116,5 +108,4 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
             }
         }
     }
-
 }

@@ -2,23 +2,19 @@ package br.edu.ifsp.app13_mytasks_dmo.model.dao;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import br.edu.ifsp.app13_mytasks_dmo.model.entities.Tag;
 
 public class TagDaoSingleton implements ITagDao{
     private static TagDaoSingleton instance;
     private List<Tag> dataset;
-
     private TagDaoSingleton(){
         dataset = new ArrayList<>();
     }
-
     public static TagDaoSingleton getInstance(){
         if(instance == null)
             instance = new TagDaoSingleton();
         return instance;
     }
-
     @Override
     public void create(Tag tag) {
         if(tag != null){
@@ -27,12 +23,10 @@ public class TagDaoSingleton implements ITagDao{
             }
         }
     }
-
     @Override
     public boolean delete(Tag tag) {
         return dataset.remove(tag);
     }
-
     @Override
     public Tag find(String tagName) {
         return dataset.stream()
@@ -40,7 +34,6 @@ public class TagDaoSingleton implements ITagDao{
                 .findFirst()
                 .orElse(null);
     }
-
     @Override
     public List<Tag> findAll() {
         return dataset;

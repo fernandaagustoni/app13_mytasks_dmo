@@ -11,7 +11,6 @@ public class TaskDetailsPresenter implements TaskDetailsMVP.Presenter {
     private TaskDetailsMVP.View view;
     private Task task;
     private ITaskDao dao;
-
     public TaskDetailsPresenter(TaskDetailsMVP.View view) {
         this.view = view;
         task = null;
@@ -22,7 +21,6 @@ public class TaskDetailsPresenter implements TaskDetailsMVP.Presenter {
     public void deatach() {
         this.view = null;
     }
-
     @Override
     public void verifyUpdate() {
         String title;
@@ -33,7 +31,6 @@ public class TaskDetailsPresenter implements TaskDetailsMVP.Presenter {
             view.updateUI(task.getTitle(), task.getDescription(), task.getCreationDate());
         }
     }
-
     @Override
     public void saveTask(String title, String description, String creationdate) {
 

@@ -2,13 +2,10 @@ package br.edu.ifsp.app13_mytasks_dmo.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import br.edu.ifsp.app13_mytasks_dmo.R;
 import br.edu.ifsp.app13_mytasks_dmo.utils.mvp.MainMVP;
 import br.edu.ifsp.app13_mytasks_dmo.presenter.MainPresenter;
@@ -27,19 +24,16 @@ public class MainActivity extends AppCompatActivity implements MainMVP.View {
         setListener();
         presenter = new MainPresenter(this);
     }
-
     @Override
     protected void onStart() {
         super.onStart();
         presenter.populateList(recyclerView);
     }
-
     @Override
     protected void onDestroy() {
         presenter.deatach();
         super.onDestroy();
     }
-
     @Override
     public Context getContext() {
         return this;
@@ -57,7 +51,5 @@ public class MainActivity extends AppCompatActivity implements MainMVP.View {
                 presenter.openDetails();
             }
         });
-
     }
-
 }

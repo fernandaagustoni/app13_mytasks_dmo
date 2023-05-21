@@ -16,7 +16,6 @@ public class MainPresenter implements MainMVP.Presenter {
     private MainMVP.View view;
     private ITaskDao dao;
     Task task;
-
     public MainPresenter(MainMVP.View view) {
         this.view = view;
         dao = TaskDaoSingleton.getInstance();
@@ -25,20 +24,17 @@ public class MainPresenter implements MainMVP.Presenter {
     public void deatach() {
         view = null;
     }
-
     @Override
     public void openDetails() {
         Intent intent = new Intent(view.getContext(), TaskDetailsActivity.class);
         view.getContext().startActivity(intent);
     }
-
     @Override
     public void openDetails(Task task) {
         Intent intent = new Intent(view.getContext(), TaskDetailsActivity.class);
         intent.putExtra(Constant.ATTR_TITLE, task.getTitle());
         view.getContext().startActivity(intent);
     }
-
     @Override
     public void populateList(RecyclerView recyclerView) {
         ItemPocketRecyclerAdapter adapter = new
@@ -54,20 +50,16 @@ public class MainPresenter implements MainMVP.Presenter {
                 LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-
     }
-
     @Override
     public void priorityTask(Task task) {
         task.setPriority(!task.isPriority());
         dao.update(task.getTitle(), task);
     }
-
     @Override
     public void deleteTask(Task task) {
         dao.delete(task);
     }
-
     @Override
     public void editTask(Task task) {
         openDetails(task);

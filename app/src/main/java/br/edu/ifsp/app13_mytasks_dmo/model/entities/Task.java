@@ -2,9 +2,10 @@ package br.edu.ifsp.app13_mytasks_dmo.model.entities;
 
 import androidx.annotation.NonNull;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
-public class Task {
+public class Task implements Comparable<Task>{
     private String title;
     private String description;
     private String creationDate;
@@ -67,5 +68,9 @@ public class Task {
     @Override
     public String toString() {
         return "Title: " + title;
+    }
+    @Override
+    public int compareTo(Task task) {
+        return Comparator.comparing(Task::isPriority).reversed().compare(this, task);
     }
 }

@@ -1,6 +1,7 @@
 package br.edu.ifsp.app13_mytasks_dmo.model.dao;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import br.edu.ifsp.app13_mytasks_dmo.model.entities.Tag;
@@ -24,6 +25,7 @@ public class TaskDaoSingleton implements ITaskDao{
     public void create(Task task) {
         if(task != null){
             dataset.add(task);
+            Collections.sort(dataset);
         }
     }
 
@@ -41,6 +43,7 @@ public class TaskDaoSingleton implements ITaskDao{
             inDataset.setPriority(task.isPriority());
             inDataset.getTags().clear();
             inDataset.getTags().addAll(task.getTags());
+            Collections.sort(dataset);
             return true;
         }
         return false;

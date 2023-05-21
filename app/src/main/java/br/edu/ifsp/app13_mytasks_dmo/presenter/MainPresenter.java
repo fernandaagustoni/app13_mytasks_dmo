@@ -58,8 +58,18 @@ public class MainPresenter implements MainMVP.Presenter {
     }
 
     @Override
-    public void favoriteArticle(Task task) {
+    public void priorityTask(Task task) {
         task.setPriority(!task.isPriority());
         dao.update(task.getTitle(), task);
+    }
+
+    @Override
+    public void deleteTask(Task task) {
+        dao.delete(task);
+    }
+
+    @Override
+    public void editTask(Task task) {
+        openDetails(task);
     }
 }

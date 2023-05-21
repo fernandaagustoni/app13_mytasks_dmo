@@ -15,7 +15,6 @@ import br.edu.ifsp.app13_mytasks_dmo.utils.mvp.MainMVP;
 import br.edu.ifsp.app13_mytasks_dmo.view.RecyclerViewItemClickListener;
 
 public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRecyclerAdapter.ViewHolder>{
-
     private Context context;
     private MainMVP.Presenter presenter;
     private List<Task> data;
@@ -51,7 +50,19 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
         holder.priorityImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                heartClick(task);
+                starClick(task);
+            }
+        });
+        holder.deleteImageView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                deleteClick(task);
+            }
+        });
+        holder.editImageView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                editClick(task);
             }
         });
     }
@@ -65,17 +76,28 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
         clickListener = listener;
     }
 
-    private void heartClick(Task task){
-        presenter.favoriteArticle(task);
+    private void starClick(Task task){
+        presenter.priorityTask(task);
+        notifyDataSetChanged();
+    }
+
+    private void deleteClick(Task task){
+        presenter.deleteTask(task);
+        notifyDataSetChanged();
+    }
+
+    private void editClick(Task task){
+        presenter.editTask(task);
         notifyDataSetChanged();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-
         public TextView titleTextView;
         public TextView descriptionTextView;
         public TextView creationdateTextView;
         public ImageView priorityImageView;
+        public ImageView deleteImageView;
+        public ImageView editImageView;
 
         public ViewHolder(View itemView){
             super(itemView);
@@ -83,9 +105,10 @@ public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRe
             descriptionTextView = itemView.findViewById(R.id.text_description_listitem);
             creationdateTextView = itemView.findViewById(R.id.text_creationdate_listitem);
             priorityImageView = itemView.findViewById(R.id.image_priority_listitem);
+            deleteImageView = itemView.findViewById(R.id.image_delete_listitem);
+            editImageView = itemView.findViewById(R.id.image_edit_listitem);
             itemView.setOnClickListener(this);
         }
-
         @Override
         public void onClick(View v) {
             if(clickListener != null){

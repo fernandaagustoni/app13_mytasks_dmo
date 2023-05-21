@@ -15,6 +15,8 @@ public interface MainMVP {
         void openDetails();
         void openDetails(Task task);
         void populateList(RecyclerView recyclerView);
-        void favoriteArticle(Task task);
+        void priorityTask(Task task);
+        void deleteTask(Task task);
+        void editTask(Task task);
     }
 }

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import br.edu.ifsp.app13_mytasks_dmo.model.dao.ITaskDao;
 import br.edu.ifsp.app13_mytasks_dmo.model.dao.TaskDaoSingleton;
 import br.edu.ifsp.app13_mytasks_dmo.model.entities.Task;
-import br.edu.ifsp.app13_mytasks_dmo.utils.mvp.MainMVP;
+import br.edu.ifsp.app13_mytasks_dmo.mvp.MainMVP;
 import br.edu.ifsp.app13_mytasks_dmo.utils.Constant;
 import br.edu.ifsp.app13_mytasks_dmo.view.RecyclerViewItemClickListener;
 import br.edu.ifsp.app13_mytasks_dmo.view.TaskDetailsActivity;

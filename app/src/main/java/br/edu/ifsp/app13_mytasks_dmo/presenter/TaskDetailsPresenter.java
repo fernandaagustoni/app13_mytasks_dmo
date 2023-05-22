@@ -5,7 +5,7 @@ import br.edu.ifsp.app13_mytasks_dmo.model.dao.ITaskDao;
 import br.edu.ifsp.app13_mytasks_dmo.model.dao.TaskDaoSingleton;
 import br.edu.ifsp.app13_mytasks_dmo.model.entities.Task;
 import br.edu.ifsp.app13_mytasks_dmo.utils.Constant;
-import br.edu.ifsp.app13_mytasks_dmo.utils.mvp.TaskDetailsMVP;
+import br.edu.ifsp.app13_mytasks_dmo.mvp.TaskDetailsMVP;
 
 public class TaskDetailsPresenter implements TaskDetailsMVP.Presenter {
     private TaskDetailsMVP.View view;

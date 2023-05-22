@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import br.edu.ifsp.app13_mytasks_dmo.R;
 import br.edu.ifsp.app13_mytasks_dmo.presenter.TaskDetailsPresenter;
-import br.edu.ifsp.app13_mytasks_dmo.utils.mvp.TaskDetailsMVP;
+import br.edu.ifsp.app13_mytasks_dmo.mvp.TaskDetailsMVP;
 
 public class TaskDetailsActivity extends AppCompatActivity
         implements TaskDetailsMVP.View, View.OnClickListener {

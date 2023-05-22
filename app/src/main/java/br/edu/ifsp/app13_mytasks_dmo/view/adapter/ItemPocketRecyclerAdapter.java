@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import br.edu.ifsp.app13_mytasks_dmo.R;
 import br.edu.ifsp.app13_mytasks_dmo.model.entities.Task;
-import br.edu.ifsp.app13_mytasks_dmo.utils.mvp.MainMVP;
+import br.edu.ifsp.app13_mytasks_dmo.mvp.MainMVP;
 import br.edu.ifsp.app13_mytasks_dmo.view.RecyclerViewItemClickListener;
 
 public class ItemPocketRecyclerAdapter extends RecyclerView.Adapter<ItemPocketRecyclerAdapter.ViewHolder>{

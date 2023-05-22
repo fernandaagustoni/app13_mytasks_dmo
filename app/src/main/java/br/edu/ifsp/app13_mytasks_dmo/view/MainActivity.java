@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import br.edu.ifsp.app13_mytasks_dmo.R;
-import br.edu.ifsp.app13_mytasks_dmo.utils.mvp.MainMVP;
+import br.edu.ifsp.app13_mytasks_dmo.mvp.MainMVP;
 import br.edu.ifsp.app13_mytasks_dmo.presenter.MainPresenter;
 
 public class MainActivity extends AppCompatActivity implements MainMVP.View {

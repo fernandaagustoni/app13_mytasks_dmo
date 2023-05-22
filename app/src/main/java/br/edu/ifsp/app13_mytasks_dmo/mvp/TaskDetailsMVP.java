@@ -1,4 +1,4 @@
-package br.edu.ifsp.app13_mytasks_dmo.utils.mvp;
+package br.edu.ifsp.app13_mytasks_dmo.mvp;
 
 import android.os.Bundle;
 

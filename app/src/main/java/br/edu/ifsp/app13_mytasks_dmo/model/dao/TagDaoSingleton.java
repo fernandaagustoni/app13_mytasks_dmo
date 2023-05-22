@@ -3,7 +3,6 @@ package br.edu.ifsp.app13_mytasks_dmo.model.dao;
 import java.util.ArrayList;
 import java.util.List;
 import br.edu.ifsp.app13_mytasks_dmo.model.entities.Tag;
-
 public class TagDaoSingleton implements ITagDao{
     private static TagDaoSingleton instance;
     private List<Tag> dataset;

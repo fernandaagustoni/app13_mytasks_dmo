@@ -1,5 +1,6 @@
 package br.edu.ifsp.app13_mytasks_dmo.presenter;
 
+import android.content.Context;
 import android.os.Bundle;
 import br.edu.ifsp.app13_mytasks_dmo.model.dao.ITaskDao;
 import br.edu.ifsp.app13_mytasks_dmo.model.dao.TaskDaoSingleton;
@@ -11,12 +12,14 @@ public class TaskDetailsPresenter implements TaskDetailsMVP.Presenter {
     private TaskDetailsMVP.View view;
     private Task task;
     private ITaskDao dao;
+    private Context context;
     public TaskDetailsPresenter(TaskDetailsMVP.View view) {
         this.view = view;
         task = null;
         dao = TaskDaoSingleton.getInstance();
+        context = view.getContext();
+        dao.setContext(context);
     }
-
     @Override
     public void deatach() {
         this.view = null;

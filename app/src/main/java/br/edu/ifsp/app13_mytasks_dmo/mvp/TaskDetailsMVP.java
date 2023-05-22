@@ -1,9 +1,10 @@
 package br.edu.ifsp.app13_mytasks_dmo.mvp;
 
+import android.content.Context;
 import android.os.Bundle;
-
 public interface TaskDetailsMVP {
     interface View{
+        Context getContext();
         void updateUI(String title, String description, String creationdate);
         Bundle getBundle();
         void showToast(String message);

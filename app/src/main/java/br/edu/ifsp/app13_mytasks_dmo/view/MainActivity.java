@@ -13,9 +13,7 @@ import br.edu.ifsp.app13_mytasks_dmo.presenter.MainPresenter;
 public class MainActivity extends AppCompatActivity implements MainMVP.View {
     private MainMVP.Presenter presenter;
     private FloatingActionButton actionButton;
-    //private ListView listView;
     private RecyclerView recyclerView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements MainMVP.View {
         actionButton = findViewById(R.id.fab_add_task);
         recyclerView = findViewById(R.id.recyclerview_task);
     }
-
     private void setListener(){
         actionButton.setOnClickListener(new View.OnClickListener() {
             @Override

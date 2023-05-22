@@ -2,6 +2,8 @@ package br.edu.ifsp.app13_mytasks_dmo.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -60,6 +62,10 @@ public class TaskDetailsActivity extends AppCompatActivity
         titleEditText.setText(title);
         descriptionEditText.setText(description);
         creationdateEditText.setText(creationdate);
+    }
+    @Override
+    public Context getContext() {
+        return this;
     }
     @Override
     public Bundle getBundle() {

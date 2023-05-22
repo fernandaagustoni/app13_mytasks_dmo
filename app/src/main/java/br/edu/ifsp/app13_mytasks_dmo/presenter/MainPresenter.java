@@ -1,5 +1,6 @@
 package br.edu.ifsp.app13_mytasks_dmo.presenter;
 
+import android.content.Context;
 import android.content.Intent;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,9 +17,12 @@ public class MainPresenter implements MainMVP.Presenter {
     private MainMVP.View view;
     private ITaskDao dao;
     Task task;
+    private Context context;
     public MainPresenter(MainMVP.View view) {
         this.view = view;
         dao = TaskDaoSingleton.getInstance();
+        context = view.getContext();
+        dao.setContext(context);
     }
     @Override
     public void deatach() {
